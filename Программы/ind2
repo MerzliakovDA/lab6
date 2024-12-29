@@ -1,0 +1,20 @@
+import re
+
+def count_occurrences_of_or(text):
+
+    if not isinstance(text, str):
+        print("Ошибка: Введите строку.")
+        return 0
+
+    if not text: 
+        print("Ошибка: Введена пустая строка.")
+        return 0
+
+    matches = re.findall(r'\bили\b', text, re.IGNORECASE)
+    return len(matches)
+
+
+if __name__ == "__main__":
+    input_text = input("Введите строку: ")
+    count = count_occurrences_of_or(input_text)
+    print(f"Слово 'или' встречается {count} раз.")
